@@ -1850,9 +1850,10 @@ class ShareesTest extends TestCase {
 	 * @dataProvider dataTestSplitUserRemoteError
 	 *
 	 * @param string $id
-	 * @expectedException \Exception
 	 */
 	public function testSplitUserRemoteError($id) {
+		$this->expectException(\Exception::class);
+
 		$this->sharees->splitUserRemote($id);
 	}
 

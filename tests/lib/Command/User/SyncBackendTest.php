@@ -275,9 +275,10 @@ class SyncBackendTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \LengthException
 	 */
 	public function testSingleUserSyncExistingUserException() {
+		$this->expectException(\LengthException::class);
+
 		$inputInterface = $this->createMock(InputInterface::class);
 		$outputInterface = $this->createMock(OutputInterface::class);
 		$syncService = $this->createMock(SyncService::class);

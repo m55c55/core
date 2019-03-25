@@ -378,8 +378,6 @@ class ScannerTest extends \Test\TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
-	 * @expectedExceptionMessage No MetaData
 	 *
 	 * @throws \OCP\Files\StorageNotAvailableException
 	 * @throws \OCP\Lock\LockedException
@@ -387,6 +385,9 @@ class ScannerTest extends \Test\TestCase {
 	 * @throws \OC\ServerNotAvailableException
 	 */
 	public function testUnLockInCaseOfExceptionInScanFile() {
+		$this->expectException(\Exception::class);
+		$this->expectExceptionMessage('No MetaData');
+
 		/** @var Storage | \PHPUnit\Framework\MockObject\MockObject $storage */
 		$storage = $this->createMock(Storage::class);
 		$storage->expects($this->any())
@@ -403,8 +404,6 @@ class ScannerTest extends \Test\TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
-	 * @expectedExceptionMessage No MetaData
 	 *
 	 * @throws \OCP\Files\StorageNotAvailableException
 	 * @throws \OCP\Lock\LockedException
@@ -412,6 +411,9 @@ class ScannerTest extends \Test\TestCase {
 	 * @throws \OC\ServerNotAvailableException
 	 */
 	public function testUnLockInCaseOfExceptionInScan() {
+		$this->expectException(\Exception::class);
+		$this->expectExceptionMessage('No MetaData');
+
 		/** @var Storage | \PHPUnit\Framework\MockObject\MockObject $storage */
 		$storage = $this->createMock(Storage::class);
 		$storage->expects($this->any())
